@@ -1,5 +1,18 @@
 # System Architecture — Autonomous AI Sales Voice Agent
 
+## Visual Architecture Diagrams
+
+### 1. MVP Real-Time Full-Duplex Voice Architecture
+![NovaFlow AI System Architecture](diagrams/01-system-architecture.png)
+
+### 2. Full-Duplex Turn Lifecycle, Streaming & Barge-In
+![Voice-to-Voice Turn Lifecycle](diagrams/02-voice-turn-flow.png)
+
+### 3. 100,000-User Production Scalability, Security & Unit Economics
+![100K-User Cloud Architecture](diagrams/03-scale-100k-architecture.png)
+
+---
+
 ## 1. MVP Real-Time Voice Call Architecture (Local + Groq)
 
 ```mermaid

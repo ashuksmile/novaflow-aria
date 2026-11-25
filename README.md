@@ -11,9 +11,18 @@ A functional, real-time, multilingual (**English + Hindi**) Autonomous AI Sales 
 - **Automated Appointment Booking & CRM Integration:** Agentic tool calling checks open calendar slots, books demos, and updates a pluggable `CRMAdapter` (SQLite + optional HubSpot/Salesforce webhook).
 - **Call Summarisation & Business Insights:** One-click post-call executive summary, pain points, sentiment trend, recommended next action, and ready-to-send follow-up email.
 
+## System Architecture
+
+![NovaFlow AI System Architecture](docs/diagrams/01-system-architecture.png)
+
+![Voice-to-Voice Turn Lifecycle](docs/diagrams/02-voice-turn-flow.png)
+
+![100K-User Production Architecture](docs/diagrams/03-scale-100k-architecture.png)
+
 ## Documentation
 - **1-Page Project Report:** [`REPORT.md`](REPORT.md)
 - **System Architecture & 100k Scalability Diagrams:** [`docs/architecture.md`](docs/architecture.md)
+- **Interview Walkthrough & Live Demo Guide:** [`docs/interview_guide.md`](docs/interview_guide.md)
 
 ## Quick Start
 
