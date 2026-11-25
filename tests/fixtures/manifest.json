@@ -1,0 +1,51 @@
+[
+  {
+    "file": "en_librispeech_asr_dummy_1.wav",
+    "language": "en",
+    "text": "NOR IS MISTER QUILTER'S MANNER LESS INTERESTING THAN HIS MATTER",
+    "source": "hf-internal-testing/librispeech_asr_dummy/clean/validation#1",
+    "seconds": 4.82
+  },
+  {
+    "file": "en_librispeech_asr_dummy_6.wav",
+    "language": "en",
+    "text": "ON THE GENERAL PRINCIPLES OF ART MISTER QUILTER WRITES WITH EQUAL LUCIDITY",
+    "source": "hf-internal-testing/librispeech_asr_dummy/clean/validation#6",
+    "seconds": 5.64
+  },
+  {
+    "file": "en_librispeech_asr_dummy_8.wav",
+    "language": "en",
+    "text": "AS FOR ETCHINGS THEY ARE OF TWO KINDS BRITISH AND FOREIGN",
+    "source": "hf-internal-testing/librispeech_asr_dummy/clean/validation#8",
+    "seconds": 5.12
+  },
+  {
+    "file": "en_librispeech_asr_dummy_10.wav",
+    "language": "en",
+    "text": "NEAR THE FIRE AND THE ORNAMENTS FRED BROUGHT HOME FROM INDIA ON THE MANTEL BOARD",
+    "source": "hf-internal-testing/librispeech_asr_dummy/clean/validation#10",
+    "seconds": 5.6
+  },
+  {
+    "file": "hi_fleurs_3.wav",
+    "language": "hi",
+    "text": "कुतूहल गाँव में आधे घंटे टहलना समय की हानि नहीं है।",
+    "source": "google/fleurs/hi_in/validation#3",
+    "seconds": 6.42
+  },
+  {
+    "file": "hi_fleurs_1.wav",
+    "language": "hi",
+    "text": "वैज्ञानिकों का मानना है कि ओसेलोट्स गंध के द्वारा जानवरों का पीछा करते और खाते (शिकार) हैं, यह सूँघते हुए कि वे ज़मीन पर कहाँ रहे होंगे।",
+    "source": "google/fleurs/hi_in/validation#1",
+    "seconds": 10.26
+  },
+  {
+    "file": "hi_fleurs_6.wav",
+    "language": "hi",
+    "text": "रॉबिन उथप्पा ने केवल 41 गेंदों में 11 चौकों और 2 छक्कों की मदद से 70 रन बना कर पारी का सर्वोच्च स्कोर बनाया.",
+    "source": "google/fleurs/hi_in/validation#6",
+    "seconds": 9.48
+  }
+]

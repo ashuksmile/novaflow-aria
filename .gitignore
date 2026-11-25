@@ -1,0 +1,9 @@
+.venv/
+__pycache__/
+*.pyc
+.env
+data/*.db
+models/
+.DS_Store
+tests/output/
+certs/
