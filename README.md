@@ -44,14 +44,19 @@ cp .env.example .env
 # Add your GROQ_API_KEY in .env
 ```
 
-### 4. Run the Server
+### 4. Build the React + TypeScript Frontend
+```bash
+cd frontend && npm install && npm run build && cd ..
+```
+
+### 5. Run the Server
 ```bash
 .venv/bin/uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload
 ```
-Open **http://localhost:8000**, press **Start Call**, allow the mic and just talk. Use headphones for the
-cleanest barge-in (or untick *Allow interrupting Aria* when on laptop speakers).
+Open **http://localhost:8000** (or run `cd frontend && npm run dev` for Vite HMR on port 5173), press **Start Call**, allow the mic and just talk. Use headphones for the
+cleanest barge-in (or untick *Barge-in* when on laptop speakers).
 
-### 5. Test that it really hears and really speaks
+### 6. Test that it really hears and really speaks
 ```bash
 uv pip install --python .venv/bin/python -r requirements-dev.txt
 .venv/bin/python -m scripts.fetch_test_audio   # once: real human EN/HI clips -> tests/fixtures (already committed)
@@ -82,8 +87,14 @@ Listen to what was generated in `tests/output/*.wav`.
 │   ├── crm.py           # Pluggable CRMAdapter (SQLite + Webhook)
 │   ├── database.py      # SQLite schema, calendar slots, & analytics queries
 │   └── config.py        # Environment configuration
-├── frontend/
-│   └── index.html       # Live Voice Console & CRM Dashboard UI
+├── frontend/            # React 19 + TypeScript + Vite SPA
+│   ├── src/
+│   │   ├── App.tsx              # Tabbed shell (Call, Calendar, CRM, Insights)
+│   │   ├── hooks/useVoiceCall.ts # Full-duplex WebSocket & call state machine
+│   │   ├── lib/audio.ts         # AudioWorklet 16 kHz PCM capture + Web Audio player
+│   │   ├── lib/api.ts           # Typed REST client
+│   │   └── components/          # Navbar, CallStage, TranscriptPanel, LeadSidePanel, Calendar, CRM, Insights
+│   └── vite.config.ts
 ├── knowledge_base/      # Markdown product, pricing, security, ROI & objection docs
 ├── tests/               # Audio quality, STT, VAD, call e2e & browser tests (+ real speech fixtures)
 ├── scripts/fetch_test_audio.py

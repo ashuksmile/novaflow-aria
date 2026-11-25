@@ -6,7 +6,7 @@ import asyncio
 from contextlib import asynccontextmanager
 import json
 from typing import Dict, List
-from fastapi import FastAPI, WebSocket, WebSocketDisconnect
+from fastapi import FastAPI, HTTPException, WebSocket, WebSocketDisconnect
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse
 
@@ -64,9 +64,27 @@ app.add_middleware(
 )
 
 
+FRONTEND_DIST = FRONTEND_DIR / "dist"
+
+
 @app.get("/")
 async def index():
-    return FileResponse(FRONTEND_DIR / "index.html")
+    built = FRONTEND_DIST / "index.html"
+    if built.exists():
+        return FileResponse(built)
+    raise HTTPException(
+        status_code=503,
+        detail="Frontend bundle not built. Run: cd frontend && npm install && npm run build",
+    )
+
+
+@app.get("/assets/{asset_path:path}")
+async def frontend_assets(asset_path: str):
+    assets_root = (FRONTEND_DIST / "assets").resolve()
+    target = (assets_root / asset_path).resolve()
+    if not str(target).startswith(str(assets_root)) or not target.is_file():
+        raise HTTPException(status_code=404, detail="Asset not found")
+    return FileResponse(target)
 
 
 @app.get("/api/health")
